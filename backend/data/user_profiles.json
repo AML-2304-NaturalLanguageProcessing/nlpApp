@@ -1,0 +1,98 @@
+[
+    {
+      "user_id": 1,
+      "reviews": [
+        {
+          "book_id": "1Q84",
+          "emotions": ["Sadness", "Surprise"]
+        },
+        {
+          "book_id": "The_Great_Gatsby",
+          "emotions": ["Love", "Joy"]
+        }
+      ]
+    },
+    {
+      "user_id": 2,
+      "reviews": [
+        {
+          "book_id": "To_Kill_a_Mockingbird",
+          "emotions": ["Sadness", "Anger"]
+        },
+        {
+          "book_id": "Pride_and_Prejudice",
+          "emotions": ["Love"]
+        },
+        {
+          "book_id": "1Q84",
+          "emotions": ["Fear", "Surprise"]
+        }
+      ]
+    },
+    {
+      "user_id": 3,
+      "reviews": [
+        {
+          "book_id": "The_Great_Gatsby",
+          "emotions": ["Love", "Joy"]
+        },
+        {
+          "book_id": "Moby_Dick",
+          "emotions": ["Anger", "Fear"]
+        }
+      ]
+    },
+    {
+      "user_id": 4,
+      "reviews": [
+        {
+          "book_id": "Pride_and_Prejudice",
+          "emotions": ["Love"]
+        },
+        {
+          "book_id": "Moby_Dick",
+          "emotions": ["Fear", "Surprise"]
+        }
+      ]
+    },
+    {
+      "user_id": 5,
+      "reviews": [
+        {
+          "book_id": "1Q84",
+          "emotions": ["Sadness", "Surprise"]
+        },
+        {
+          "book_id": "The_Catcher_in_the_Rye",
+          "emotions": ["Sadness", "Anger"]
+        }
+      ]
+    },
+    {
+      "user_id": 6,
+      "reviews": [
+        {
+          "book_id": "The_Great_Gatsby",
+          "emotions": ["Love", "Joy"]
+        },
+        {
+          "book_id": "To_Kill_a_Mockingbird",
+          "emotions": ["Sadness", "Anger"]
+        }
+      ]
+    },
+    {
+      "user_id": 50,
+      "reviews": [
+        {
+          "book_id": "Pride_and_Prejudice",
+          "emotions": ["Love", "Surprise"]
+        },
+        {
+          "book_id": "The_Catcher_in_the_Rye",
+          "emotions": ["Sadness", "Anger"]
+        }
+      ]
+    }
+  ]
+  

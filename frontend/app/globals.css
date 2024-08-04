@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 248, 255, 237;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+input[type="text"] {
+  color: #000; /* Set the text color to black */
+  padding: 10px; /* Add some padding for better appearance */
+  border: 1px solid #ccc; /* Add a border for better visibility */
+  border-radius: 5px; /* Add some border radius for better appearance */
+  font-size: 16px; /* Adjust the font size */
+  background-color: #fff; /* Ensure the background color is white */
+}
+
+input[type="text"]::placeholder {
+  color: #999; /* Set a color for the placeholder text */
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.search-input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.search-input::placeholder {
+  text-align: center;
+  color: #999;
+}

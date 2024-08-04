@@ -1,0 +1,55 @@
+{
+    "Sadness": [
+      {
+        "title": "The Fault in Our Stars",
+        "author": "John Green",
+        "category": "Young Adult Fiction"
+      },
+      {
+        "title": "A Monster Calls",
+        "author": "Patrick Ness",
+        "category": "Fantasy"
+      },
+      {
+        "title": "Me Before You",
+        "author": "Jojo Moyes",
+        "category": "Romance"
+      }
+    ],
+    "Joy": [
+      {
+        "title": "The Happiness Project",
+        "author": "Gretchen Rubin",
+        "category": "Self-Help"
+      },
+      {
+        "title": "The Art of Happiness",
+        "author": "Dalai Lama",
+        "category": "Philosophy"
+      },
+      {
+        "title": "Eat, Pray, Love",
+        "author": "Elizabeth Gilbert",
+        "category": "Memoir"
+      }
+    ],
+    "Love": [
+      {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "category": "Classic Romance"
+      },
+      {
+        "title": "The Notebook",
+        "author": "Nicholas Sparks",
+        "category": "Romance"
+      },
+      {
+        "title": "Outlander",
+        "author": "Diana Gabaldon",
+        "category": "Historical Fiction"
+      }
+    ]
+    // Add more emotions and their respective books here
+  }
+  
