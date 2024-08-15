@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import { fetchBooksByQuery, fetchPopularBooks } from '../utils/googleBooksApi';
@@ -67,7 +68,7 @@ export default function Home() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 my-8">
             {searchResults.map((book, index) => (
               <div key={index} className="bg-white text-gray-800 p-4 rounded-lg shadow-md flex flex-col items-center">
-                <img
+                <Image
                   src={book.volumeInfo?.imageLinks?.thumbnail || '/default-book.png'}
                   alt={book.volumeInfo?.title || 'No title available'}
                   className="mb-4 w-32 h-40 object-cover"
@@ -81,7 +82,7 @@ export default function Home() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 my-8">
             {popularBooks.map((book, index) => (
               <div key={index} className="bg-white text-gray-800 p-4 rounded-lg shadow-md flex flex-col items-center">
-                <img
+                <Image
                   src={book.volumeInfo?.imageLinks?.thumbnail || '/default-book.png'}
                   alt={book.volumeInfo?.title || 'No title available'}
                   className="mb-4 w-32 h-40 object-cover"

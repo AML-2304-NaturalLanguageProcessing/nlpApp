@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { fetchPopularBooks } from '../utils/googleBooksApi';
 
@@ -18,7 +19,7 @@ export default function PopularBooks() {
         {books && books.length > 0 ? (
           books.map((book, index) => (
             <div key={index} className="bg-white text-gray-800 p-4 rounded-lg shadow-md flex flex-col items-center">
-              <img
+              <Image
                 src={book.volumeInfo?.imageLinks?.thumbnail || '/default-book.png'}
                 alt={book.volumeInfo?.title || 'No title available'}
                 className="mb-4 w-32 h-40 object-cover"

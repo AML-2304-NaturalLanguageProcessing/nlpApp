@@ -1,4 +1,4 @@
-// pages/forgot-password.js
+import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
@@ -30,7 +30,7 @@ export default function ForgotPassword() {
     <div className="flex flex-col items-center justify-center flex-grow bg-[#F8FFED]">
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-lg flex items-center">
         <div className="w-1/2">
-          <img src="/images/reading_image_large.png" alt="Reading" className="w-full h-auto" />
+          <Image src="/images/reading_image_large.png" alt="Reading" className="w-full h-auto" />
         </div>
         <div className="w-1/2 pl-8">
           <h1 className="text-2xl font-bold mb-4">Forgot Password</h1>

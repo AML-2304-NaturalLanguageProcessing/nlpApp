@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { fetchRecommendationsByEmotion } from '../utils/hybridRecommendationApi';
 
@@ -26,7 +27,7 @@ export default function EmotionBasedRecommendations({ emotions }) {
         {books.length > 0 ? (
           books.map((book, index) => (
             <div key={index} className="bg-gray-200 text-gray-800 py-2 px-4 rounded flex flex-col items-center">
-              <img src={book.thumbnail} alt={book.title} className="mb-2" />
+              <Image src={book.thumbnail} alt={book.title} className="mb-2" />
               <h3 className="text-center">{book.title}</h3>
               <p className="text-center">{book.author}</p>
               <p className="text-center">{book.category}</p>

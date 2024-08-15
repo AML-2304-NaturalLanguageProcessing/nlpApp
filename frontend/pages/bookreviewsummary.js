@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Layout from '../components/Layout';
 
 export default function BookReviewSummary({ book }) {
@@ -18,7 +19,7 @@ export default function BookReviewSummary({ book }) {
             </div>
           </div>
           <div className="w-40 h-40 bg-gray-200">
-            <img src={book.image_url || '/default-book.png'} alt={book.title} className="w-full h-full object-cover rounded-lg" />
+            <Image src={book.image_url || '/default-book.png'} alt={book.title} className="w-full h-full object-cover rounded-lg" />
           </div>
         </div>
         <div className="bg-gray-200 w-full h-96 mb-4"></div>
@@ -26,10 +27,10 @@ export default function BookReviewSummary({ book }) {
           <p className="mb-4">Get Our Free Apps</p>
           <div className="flex justify-center space-x-4 mb-4">
             <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
-              <img src="/images/google-play-badge.png" alt="Google Play" className="w-32 h-auto" />
+              <Image src="/images/google-play-badge.png" alt="Google Play" className="w-32 h-auto" />
             </a>
             <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-              <img src="/images/app-store-badge.png" alt="App Store" className="w-32 h-auto" />
+              <Image src="/images/app-store-badge.png" alt="App Store" className="w-32 h-auto" />
             </a>
           </div>
           <a href="/about-us" className="text-green-700">About us</a>
