@@ -27,7 +27,6 @@ export default function Homepage() {
     }
   }, [searchQuery]);
 
-  // Load popular books on initial load
   useEffect(() => {
     async function loadPopularBooks() {
       const books = await fetchPopularBooks();
@@ -71,6 +70,8 @@ export default function Homepage() {
                 <Image
                   src={book.volumeInfo?.imageLinks?.thumbnail || '/default-book.png'}
                   alt={book.volumeInfo?.title || 'No title available'}
+                  width={128}  
+                  height={192} 
                   className="mb-4 w-32 h-40 object-cover"
                 />
                 <h3 className="text-center font-semibold">{book.volumeInfo?.title || 'No title available'}</h3>
@@ -85,6 +86,8 @@ export default function Homepage() {
                 <Image
                   src={book.volumeInfo?.imageLinks?.thumbnail || '/default-book.png'}
                   alt={book.volumeInfo?.title || 'No title available'}
+                  width={128}  
+                  height={192} 
                   className="mb-4 w-32 h-40 object-cover"
                 />
                 <h3 className="text-center font-semibold">{book.volumeInfo?.title || 'No title available'}</h3>
