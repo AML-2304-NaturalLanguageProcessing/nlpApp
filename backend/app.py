@@ -1,14 +1,14 @@
-from flask import Flask, send_from_directory, request, jsonify
+from flask import Flask, send_from_directory, jsonify, request
 
-app = Flask(__name__, static_folder='../frontend/.next')
+app = Flask(__name__, static_folder='../frontend/out')
 
-@app.route('/', defaults={'path': ''})
+@app.route('/')
+def serve_index():
+    return send_from_directory(app.static_folder, 'index.html')
+
 @app.route('/<path:path>')
-def catch_all(path):
-    if path != "" and not path.endswith("favicon.ico") and not path.endswith("robots.txt"):
-        return send_from_directory(app.static_folder, path)
-    else:
-        return send_from_directory(app.static_folder, 'index.html')
+def serve_static(path):
+    return send_from_directory(app.static_folder, path)
 
 @app.route('/predict', methods=['POST'])
 def predict():
