@@ -1,18 +1,14 @@
 from flask import Flask, send_from_directory, jsonify
 
-app = Flask(__name__, static_folder='../frontend/.next')
+app = Flask(__name__, static_folder='../frontend/out')
 
 @app.route('/')
-@app.route('/<path:path>')
-def serve_index(path=None):
-    if path and path.startswith('_next/static'):
-        return send_from_directory(app.static_folder, path)
-    else:
-        return send_from_directory(app.static_folder + '/static/pages', 'index.html')
+def serve_index():
+    return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/_next/static/<path:path>')
+@app.route('/<path:path>')
 def serve_static(path):
-    return send_from_directory(app.static_folder + '/static', path)
+    return send_from_directory(app.static_folder, path)
 
 @app.route('/predict', methods=['POST'])
 def predict():
