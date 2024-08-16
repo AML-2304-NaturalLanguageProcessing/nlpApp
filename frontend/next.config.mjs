@@ -1,6 +1,6 @@
 // next.config.mjs
 export default {
-    images: {
-      domains: ['books.google.com'],
-    },
-  }  
+  images: {
+    domains: ['books.google.com'],
+  },
+}  
