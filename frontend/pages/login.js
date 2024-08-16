@@ -38,7 +38,13 @@ export default function Login() {
     <div className="flex flex-col items-center justify-center flex-grow bg-[#F8FFED]">
       <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-lg flex items-center">
         <div className="w-1/2">
-          <Image src="/images/reading_image_large.png" alt="Reading" className="w-full h-auto" />
+          <Image 
+            src="/images/reading_image_large.png" 
+            alt="Reading" 
+            width={200}  // Adjust as necessary
+            height={300} // Adjust as necessary
+            className="w-full h-auto" 
+          />
         </div>
         <div className="w-1/2 pl-8">
           <h1 className="text-2xl font-bold mb-4">User Login</h1>

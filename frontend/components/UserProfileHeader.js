@@ -10,7 +10,13 @@ const UserProfileHeader = ({ user, onLogout }) => {
         <div className="mr-4 text-green-700">
           {user.email}
         </div>
-        <Image src={user.user_metadata?.avatar_url || '/default-avatar.png'} alt="User" className="w-10 h-10 rounded-full" />
+        <Image 
+          src={user.user_metadata?.avatar_url || '/default-avatar.png'} 
+          alt="User" 
+          width={40}  // Adjust as necessary
+          height={40} // Adjust as necessary
+          className="rounded-full" 
+        />
         <button onClick={onLogout} className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded ml-4">
           Logout
         </button>
