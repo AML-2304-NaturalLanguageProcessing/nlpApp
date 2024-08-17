@@ -1,26 +1,27 @@
-from flask import Flask, request, jsonify
-import tensorflow as tf
-from api.predict import predict_bp  # Make sure to create the predict.py file as explained earlier
+import os
+from flask import Flask, request, jsonify  # Ensure jsonify is imported
+from flask_cors import CORS
+from modules.recommend_user import recommend_user_bp  # Import the blueprint
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Create Flask app instance
 app = Flask(__name__)
-model = tf.keras.models.load_model('path_to_your_model.h5')
 
-# Register the blueprint
-app.register_blueprint(predict_bp)
+# Define CORS options
+cors_options = {
+    "origins": ["http://localhost:3000"],  # Assuming your React app runs on port 3000
+    "supports_credentials": True,
+    "methods": ["GET", "POST", "PUT", "DELETE"]
+}
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    data = request.get_json()
-    emotion = data.get('emotion', None)
-    query = data.get('query', None)
-    
-    input_data = preprocess_input(emotion, query)  # Implement this function
-    predictions = model.predict(input_data)
-    return jsonify(predictions.tolist())
+@app.route('/')
+def home():
+    return jsonify({"message": "Welcome to the Book Recommendation API"}), 200
 
-def preprocess_input(emotion, query):
-    # Preprocess the input data here
-    return processed_data
-
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    # Dynamically handle environment variables
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host="0.0.0.0", port=port)

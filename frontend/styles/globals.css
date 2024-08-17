@@ -31,3 +31,15 @@ body {
     text-wrap: balance;
   }
 }
+.emotion-btn {
+  background-color: #a5dfc7; /* Default color */
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.emotion-btn.selected {
+  background-color: #4caf50; /* Darker color for selected */
+}

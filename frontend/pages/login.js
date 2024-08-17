@@ -1,4 +1,3 @@
-// pages/login.js
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
@@ -15,23 +14,50 @@ export default function Login() {
     e.preventDefault();
     setError(null);
 
-    // Sign in using Supabase authentication
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    try {
+      // Sign in using Supabase authentication
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
-    if (error) {
-      setError(error.message);
-      return;
+      if (error) throw error;
+
+      const user = data.user;
+
+      // Check if the user exists and email is confirmed
+      if (user && !user.email_confirmed_at) {
+        setError('Please confirm your email before logging in.');
+        return;
+      }
+
+      if (user) {
+        // Store user_id and email in session storage
+        sessionStorage.setItem('userId', user.id);
+        sessionStorage.setItem('email', user.email);
+
+        // Fetch user_id_be from the users table where id matches the authenticated user's id
+        const { data: userDetails, error: userError } = await supabase
+          .from('users')  // Corrected table reference
+          .select('user_id_be')
+          .eq('id', user.id)  // Match the user ID with the authenticated user's ID
+          .single();
+
+        if (userError) {
+          console.error('Error fetching user details:', userError.message);
+          setError('Error fetching user details.');
+          return;
+        } else if (userDetails) {
+          // Store user_id_be in session storage
+          sessionStorage.setItem('user_id_be', userDetails.user_id_be);
+        }
+
+        // Redirect to homepage
+        router.push('/homepage');
+      } else {
+        setError('Login failed. Please check your credentials.');
+      }
+    } catch (error) {
+      console.error('Login error:', error.message);
+      setError('Login failed due to an unexpected error.');
     }
-
-    // Check if email is confirmed
-    const user = data.user;
-    if (user && !user.email_confirmed_at) {
-      setError('Please confirm your email before logging in.');
-      return;
-    }
-
-    // Redirect to homepage
-    router.push('/homepage');
   };
 
   return (
